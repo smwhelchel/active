@@ -1,0 +1,30 @@
+{
+  "name": "active",
+  "version": "1.0.0",
+  "description": "Active: a website for fitness enthusiasts looking to find events",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smwhelchel/active.git"
+  },
+  "author": "Shannon Whelchel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smwhelchel/active/issues"
+  },
+  "homepage": "https://github.com/smwhelchel/active#readme",
+  "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
+    "parser": "^0.1.4",
+    "request": "^2.67.0",
+    "require": "^2.4.20",
+    "router": "^1.1.4",
+    "text": "^0.1.0"
+  }
+}

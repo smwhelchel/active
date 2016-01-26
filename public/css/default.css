@@ -1,0 +1,79 @@
+.opacity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  opacity: .4;
+}
+
+#header {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-image: url(../images/runner.jpg);
+}
+
+#logo-header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#search-container {
+  height: 150px;
+  background-color: #FFE04E;
+}
+
+#search {
+  margin-top: 50px;
+}
+
+#label {
+  margin-right: 20px;
+}
+
+#activity, 
+#city {
+  width: 200px;
+  margin-right: 20px;
+}
+
+#state {
+  width: 150px;
+  margin-right: 20px;
+}
+
+.howitworks img {
+  height: 300px;
+  width: 300px;
+}
+
+#howitworks {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#howitworks h2, 
+h3, 
+small {
+  font-family: 'Raleway', sans-serif;
+}
+
+.heading {
+  margin-top: 250px;
+  color: black;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
