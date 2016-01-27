@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: black;
+  background-color: gray;
   opacity: .4;
 }
 
@@ -67,6 +67,26 @@ small {
   text-align: center;
 }
 
+footer {
+  background-color: #FF9D4E;
+}
+
+footer ul li {
+  display: inline-block;
+  padding: 10px;
+  float: right;
+  font-family: 'Raleway', sans-serif;
+}
+
+#footer-left {
+  padding: 10px;
+}
+
+#api-results,
+#map {
+  height: 500px;
+  width: 600px;
+}
 
 
 
