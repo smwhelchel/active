@@ -18,7 +18,7 @@ var data = document.getElementById('search-button').addEventListener('click', fu
   }
   data = JSON.stringify(data);
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'http://localhost:1337/search', true);
+  xhr.open('POST', '/search', true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(data);
   xhr.addEventListener('load', function() {
