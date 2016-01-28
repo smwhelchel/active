@@ -1,10 +1,9 @@
 var express = require('express');
 var app = express();
-var post = require('./public/js/app.js');
-var api = require('./public/js/app.js');
-var bodyParser = require('body-parser')
+var post = require('./post.js');
+var bodyParser = require('body-parser');
 
-//app.use('/api', api);
+app.use('/search', post);
 
 app.use(express.static('public'));
 

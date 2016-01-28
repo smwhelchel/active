@@ -1,3 +1,5 @@
+.navbar { background-color: #fff; }
+
 .opacity {
   position: absolute;
   top: 0;
@@ -26,13 +28,8 @@
   background-color: #FFE04E;
 }
 
-#search {
-  margin-top: 50px;
-}
-
-#label {
-  margin-right: 20px;
-}
+#search { margin-top: 50px; }
+#label { margin-right: 20px; }
 
 #activity, 
 #city {
@@ -59,17 +56,17 @@
 h3, 
 small {
   font-family: 'Raleway', sans-serif;
+  color: #337ab7;
 }
 
 .heading {
   margin-top: 250px;
   color: black;
   text-align: center;
+  font-size: 48px
 }
 
-footer {
-  background-color: #FF9D4E;
-}
+footer { background-color: #FF9D4E; }
 
 footer ul li {
   display: inline-block;
@@ -78,15 +75,16 @@ footer ul li {
   font-family: 'Raleway', sans-serif;
 }
 
-#footer-left {
-  padding: 10px;
-}
+#footer-left { padding: 10px; }
+#footer-right { padding-top: 10px; }
 
 #api-results,
 #map {
   height: 500px;
   width: 50%;
 }
+
+
 
 
 
