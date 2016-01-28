@@ -7,5 +7,6 @@ app.use('/search', post);
 
 app.use(express.static('public'));
 
-app.listen(1337);
+var port = process.env.PORT || 1337;
+app.listen(port);
 console.log('server listening');

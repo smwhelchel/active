@@ -10,7 +10,7 @@ var apiKey = '&api_key=wwzz7ez5yn8s3vqzyns3hsxv';
 
 router.post('/', textParser, function (req, res) {
   console.log(req.body);
-  var queryURL = baseUrl + req.body.activity + '&start_date=2016-01-28..' +
+  var queryURL = baseUrl + req.body.activity + '&start_date=2016-01-28..2018-01-01' +
   '&near=' + req.body.city + ',' + req.body.state + ',US&radius=50' + apiKey;
   console.log(queryURL);
   request(queryURL, function (error, response, body) {

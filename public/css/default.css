@@ -84,7 +84,13 @@ footer ul li {
   width: 50%;
 }
 
+.placeAddress {
+  padding-right: 10px;
+}
 
+#api-results {
+  overflow: scroll;
+}
 
 
 
