@@ -26,34 +26,28 @@ var data = document.getElementById('search-button').addEventListener('click', fu
     //console.log(apiResponse);
     var newData = JSON.parse(apiResponse);
 
-    //get data from api call
-    var getPlaceName = newData.results[0].place.placeName;
-    console.log(getPlaceName);
-
-    var getAddress = newData.results[0].place.addressLine1Txt;
-    console.log(getAddress);
-
-    var getCity = newData.results[0].place.cityName;
-    console.log(getCity);
-
-    var getZip = newData.results[0].place.postalCode;
-    console.log(getZip);
-
-    var getName = newData.results[0].assetName;
-    console.log(getName);
-
-    var getDate = newData.results[0].activityStartDate;
-    console.log(getDate);
-
-    var getRegistration = newData.results[0].registrationUrlAdr;
-    console.log(getRegistration);
+    for (i=0; i<=newData.results.length; i++) {
+    var getPlaceName = newData.results[i].place.placeName;
+    //var getDescription = newdata.results[i].assetDescriptions.description;
+    var getAddress = newData.results[i].place.addressLine1Txt;
+    var getCity = newData.results[i].place.cityName;
+    var getZip = newData.results[i].place.postalCode;
+    var getName = newData.results[i].assetName;
+    var getDate = newData.results[i].activityStartDate;
+    var getRegistration = newData.results[i].registrationUrlAdr;
 
     //append elements to page
     var apiDiv = document.getElementById('api-results');
 
     var eventName = document.createElement('h4');
-    eventName.textContent = getName;
+    var number = i+1 + '. ';
+    eventName.textContent = number + getName;
     apiDiv.appendChild(eventName);
+
+    //var description = document.createElement('p');
+    //console.log(getDescription);
+    //description.textContent = getDescription;
+    //apiDiv.appendChild(description);
 
     var eventDate = document.createElement('h5');
     eventDate.textContent = getDate;
@@ -82,14 +76,17 @@ var data = document.getElementById('search-button').addEventListener('click', fu
     apiDiv.appendChild(lineBreak);
 
     var eventUrl = document.createElement('a');
-    eventUrl.setAttribute('href', eventUrl);
-    eventUrl.textContent = getRegistration;
+    eventUrl.setAttribute('href', getRegistration);
+    eventUrl.textContent = 'Register for this event';
     apiDiv.appendChild(eventUrl);
 
-    /*for (i=0; i<=newData.length; i++) {
-      var getPlaceName = newData.results[i].place.placeName;
-      console.log(getPlaceName);
-    }*/
+    var border = document.createElement('h6')
+    border.textContent = '';
+    border.setAttribute('class', 'border');
+    apiDiv.appendChild(border);
+
+
+    }
 
   })
 }, false);

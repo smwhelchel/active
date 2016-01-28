@@ -84,14 +84,30 @@ footer ul li {
   width: 50%;
 }
 
-.placeAddress {
-  padding-right: 10px;
-}
+.placeAddress { padding-right: 10px; }
 
 #api-results {
   overflow: scroll;
+  padding: 20px;
 }
 
+.border {
+  border-bottom: 1px dashed black;
+  width: 100%;
+}
+
+@media (max-width: 770px) {
+  #search-container {
+    height: 300px;
+  }
+  #search {
+    margin-left: 50px;
+  }
+  #footer-right,
+  #footer-left {
+    text-align: center;
+  }
+}
 
 
 
