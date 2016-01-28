@@ -22,13 +22,13 @@ var data = document.getElementById('search-button').addEventListener('click', fu
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(data);
   xhr.addEventListener('load', function() {
+
     var apiResponse = xhr.responseText;
-    //console.log(apiResponse);
+
     var newData = JSON.parse(apiResponse);
 
     for (i=0; i<=newData.results.length; i++) {
     var getPlaceName = newData.results[i].place.placeName;
-    //var getDescription = newdata.results[i].assetDescriptions.description;
     var getAddress = newData.results[i].place.addressLine1Txt;
     var getCity = newData.results[i].place.cityName;
     var getZip = newData.results[i].place.postalCode;
@@ -43,11 +43,6 @@ var data = document.getElementById('search-button').addEventListener('click', fu
     var number = i+1 + '. ';
     eventName.textContent = number + getName;
     apiDiv.appendChild(eventName);
-
-    //var description = document.createElement('p');
-    //console.log(getDescription);
-    //description.textContent = getDescription;
-    //apiDiv.appendChild(description);
 
     var eventDate = document.createElement('h5');
     eventDate.textContent = getDate;
@@ -84,10 +79,7 @@ var data = document.getElementById('search-button').addEventListener('click', fu
     border.textContent = '';
     border.setAttribute('class', 'border');
     apiDiv.appendChild(border);
-
-
     }
-
   })
 }, false);
 
@@ -105,6 +97,5 @@ function openResults () {
   populate.className = 'show';
   google.maps.event.trigger(map, initMap());
 }
-
 
 

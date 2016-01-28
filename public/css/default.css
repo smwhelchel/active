@@ -100,8 +100,21 @@ footer ul li {
   #search-container {
     height: 300px;
   }
-  #search {
-    margin-left: 50px;
+  #seach {
+    margin: auto;
+  }
+  #activity,
+  #city {
+    margin-left: 70px;
+  }
+  #state {
+    margin-left: 95px;
+  }
+  #label {
+    margin-left: 150px;
+  }
+  #search-button {
+    margin-left: 130px;
   }
   #footer-right,
   #footer-left {
