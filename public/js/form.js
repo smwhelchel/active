@@ -1,16 +1,26 @@
 var newActivity;
 var newCity;
 var newState;
+var newLat;
+var newLong;
 
 var data = document.getElementById('search-button').addEventListener('click', function(e) {
   e.preventDefault();
-  openResults();
+  // openResults();
+
+  //show map and search results on button click
+  var populate = document.getElementById('search-results');
+  populate.className = 'show';
+  google.maps.event.trigger(map, initMap());
+
+  //get values from inputs
   var activityData = document.getElementById('activity').value;
   newActivity = activityData.replace(/\s+/g, '%20');
   cityData = document.getElementById('city').value;
   var newCity = cityData.replace(/\s+/g, '%20');
   stateData = document.getElementById('state').value;
   var newState = stateData.toUpperCase();
+
   var data = {
     activity: newActivity,
     city: newCity,
@@ -27,7 +37,15 @@ var data = document.getElementById('search-button').addEventListener('click', fu
 
     var newData = JSON.parse(apiResponse);
 
+    //loop through API results
     for (i=0; i<=newData.results.length; i++) {
+
+    var latMarker = newData.results[i].place.latitude;
+    newLat = Number(latMarker);
+
+    var longMarker = newData.results[i].place.longitude;
+    newLong = Number(longMarker);
+
     var getPlaceName = newData.results[i].place.placeName;
     var getAddress = newData.results[i].place.addressLine1Txt;
     var getCity = newData.results[i].place.cityName;
@@ -83,6 +101,24 @@ var data = document.getElementById('search-button').addEventListener('click', fu
   })
 }, false);
 
+// function initMap() {
+//       var getData = document.getElementById('data');
+//       var myLatLng = {lat: 33.600023, lng: -117.671995};
+
+//       var marker = {newLat, newLong};
+
+//       var map = new google.maps.Map(document.getElementById('map'), {
+//         zoom: 8,
+//         center: myLatLng,
+//         scrollwheel: false
+//       });
+
+//       var marker = new google.maps.Marker({
+//         position: marker,
+//         map: map
+//       });
+//     }
+
 function initMap() {
   var mapDiv = document.getElementById('map');
   var map = new google.maps.Map(mapDiv, {
@@ -92,10 +128,5 @@ function initMap() {
   });
 }
 
-function openResults () {
-  var populate = document.getElementById('search-results');
-  populate.className = 'show';
-  google.maps.event.trigger(map, initMap());
-}
 
 

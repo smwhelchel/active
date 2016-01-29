@@ -35,11 +35,13 @@
 #city {
   width: 200px;
   margin-right: 20px;
+  border-radius: 20px;
 }
 
 #state {
   width: 150px;
   margin-right: 20px;
+  border-radius: 20px;
 }
 
 .howitworks img {
@@ -94,6 +96,17 @@ footer ul li {
 .border {
   border-bottom: 1px dashed black;
   width: 100%;
+}
+
+#search-button {
+  border-radius: 20px;
+  color: black;
+  border: none;
+  background-color: #FF9D4E; 
+}
+
+#search-button:hover {
+  background-color: #BD5B0D;
 }
 
 @media (max-width: 770px) {
