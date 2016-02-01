@@ -1,8 +1,3 @@
-var newActivity;
-console.log(newActivity);
-var newCity;
-var newState;
-
 var data = document.getElementById('search-button').addEventListener('click', function(e) {
   e.preventDefault();
 
@@ -17,6 +12,7 @@ var data = document.getElementById('search-button').addEventListener('click', fu
   stateData = document.getElementById('state').value;
   var newState = stateData.toUpperCase();
 
+  //data object to send
   var data = {
     activity: newActivity,
     city: newCity,
@@ -34,10 +30,15 @@ var data = document.getElementById('search-button').addEventListener('click', fu
 
     var newData = JSON.parse(apiResponse);
 
+    //new google map
     var myLatLng = {lat: 33.600023, lng: -117.671995};
     var mapDiv = document.getElementById('map');
     var map = new google.maps.Map(mapDiv, {
-      center: {lat:33.600023, lng: -117.671995},
+      //center: {lat:33.600023, lng: -117.671995},
+      center: {
+        lat: Number(newData.results[0].place.latitude),
+        lng: Number(newData.results[0].place.longitude)
+      },
       zoom:8,
       scrollwheel: false
     });
@@ -53,13 +54,14 @@ var data = document.getElementById('search-button').addEventListener('click', fu
       var getDate = newData.results[i].activityStartDate;
       var getRegistration = newData.results[i].registrationUrlAdr;
 
+      //add marker to map
       var marker = new google.maps.Marker({
         map: map,
         position: {
           lat: Number(newData.results[i].place.latitude),
           lng: Number(newData.results[i].place.longitude)
         },
-        title: getName
+        title: i+1 + ': ' + getName
       });
 
       //append elements to page
@@ -102,7 +104,6 @@ var data = document.getElementById('search-button').addEventListener('click', fu
       border.setAttribute('class', 'border');
       apiDiv.appendChild(border);
     }
-
   })
 }, false);
 
